@@ -26,10 +26,9 @@ const petSchema = mongoose.Schema({
     historia: {
         type: String,
     },
-    //fotos
-    // fotos: {
-    //     type: Array,
-    // },
+    fotos: {
+        type: Array,
+    },
     name: {
         type: String,
     },

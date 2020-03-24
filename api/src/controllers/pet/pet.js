@@ -51,14 +51,23 @@ module.exports = {
     list: async (req, res) => {
         const pet = await Pet.find();
         res.json(pet);
+    },
 
-        // const status = pets ? 200 : 404;
-        // return res.status(status).json(customer);
+    show: async (req, res) => {
+
+    console.log('Buscando pet');
+    const { id } = req.params;
+    const pet = await Pet.findById(id);
+    res.json(pet);
     },
 
     search: async (req, res) => {
+        const { id } = req.params;
+        const currentUser = User.findById(id);
+
         res.json("Search route");
     },
+
 
     searchAnimal: async (req, res) => {
 
