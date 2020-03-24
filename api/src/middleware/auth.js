@@ -1,6 +1,8 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User";
 
+// TODO create a new middleware
+
 const auth = async (req, res, next) => {
     const token = req.header("Authorization").replace("Bearer ", "");
     const data = jwt.verify(token, process.env.JWT_KEY);
